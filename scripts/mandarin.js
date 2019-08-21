@@ -43,11 +43,23 @@ const mandarinData = {
 const navigation = document.querySelector("#mandarin").addEventListener("click", function () {
   const mandarinInfo = document.querySelector("#language-container")
   //inserts the lists into the correct HTML.
-  mandarinInfo.innerHTML =  `${addNotablePeople()} ${addFunFacts()} ${addCountries()}`
+  mandarinInfo.innerHTML =  `${addNotablePeople()} <h3>Fun Facts</h3> ${addFunFactsFactsLanguage()} ${addCountries()}`
   
   
 
 })
+
+//build list of languages
+
+function addFunFactsFactsLanguage(FunfactsLanguagesArray){
+  
+  let languageIterations = "<h4>Related Languages</h4>"
+ for (i = 0; i < mandarinData.funFacts.relatedLanguages.length; i++) {
+  languageIterations += `<p>${mandarinData.funFacts.relatedLanguages[i]}</p>`
+ }
+   return languageIterations
+
+}
 
 
 
@@ -55,48 +67,31 @@ const navigation = document.querySelector("#mandarin").addEventListener("click",
 function addNotablePeople(notablePeopleArray){
   let peopleIterations = "<h3>Notable speakers: </h3>"
  for (i = 0; i < mandarinData.notablePeople.length; i++) {
-  peopleIterations += `<br></br><p>${mandarinData.notablePeople[i]}</p>`
+  peopleIterations += `<p>${mandarinData.notablePeople[i]}</p>`
  }
   return peopleIterations
 
 }
 
-//build list of fun facts
-function addFunFacts(FunfactsArray){
-  let factsIterations = "<h3>Fun Facts: </h3>"
- for (i = 0; i < mandarinData.funFacts.length; i++) {
-  factsIterations += `<br></br><p>${mandarinData.funFacts[i]}</p>`
- }
-   return factsIterations
 
-}
 
   
-//build list of contries in which its spoken
+//build list of countries in which its spoken
 function addCountries(countriesArray){
   let countriesIterations = "<h3>Countries in which its spoken: </h3>"
  for (i = 0; i < mandarinData.countriesSpoken.length; i++) {
-  countriesIterations += `<br></br><p>${mandarinData.countriesSpoken[i]}</p>`
+  countriesIterations += `<p>${mandarinData.countriesSpoken[i]}</p>`
  }
    return countriesIterations
 
 }
-  
-//Stolen code from Justin
-
-
-// function buildlanguagelist (){
-//   let languagehtmlstring = " "
-//   for (let i= 0; i < factsLanguage.length; i++){
-// languagehtmlstring = languagehtmlstring + `<li>` + factsLanguage[i]
-//   }
-//   return languagehtmlstring
-// }
-  
-  
  
-  
 
+
+
+ 
+//Parking Lot 
+// let factsRelatedLanguage = mandarinData.funFacts.relatedLanguages
 
 
   
