@@ -82,6 +82,16 @@ function addCountries(countriesArray){
 
 }
   
+//Stolen code from Justin
+
+
+// function buildlanguagelist (){
+//   let languagehtmlstring = " "
+//   for (let i= 0; i < factsLanguage.length; i++){
+// languagehtmlstring = languagehtmlstring + `<li>` + factsLanguage[i]
+//   }
+//   return languagehtmlstring
+// }
   
   
  
