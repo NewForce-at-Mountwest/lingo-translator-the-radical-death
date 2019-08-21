@@ -95,7 +95,8 @@ const frenchbutton= document.querySelector("#french")
 // event listener creating the html to the DOM
 
 frenchbutton.addEventListener("click",function(){
-document.querySelector("#language-container").innerHTML= `<h1>${frenchtitle}</h1>
+document.querySelector("#language-container").innerHTML= 
+`<h1>${frenchtitle}</h1>
 <br>
 <div class="container">
 
