@@ -47,6 +47,84 @@ const frenchData = {
   }
 };
 
+// will print the title of french
+const frenchtitle = frenchData.name
 
+// build notable people list
+const thepeople = frenchData.notablePeople
+
+function buildpeoplelist (){
+  let peoplehtmlstring= " "
+for (let i = 0; i < thepeople.length; i++){
+peoplehtmlstring = peoplehtmlstring + `<li>` + thepeople[i]
+}
+return peoplehtmlstring
+}
+// will build language list
+const factsLanguage= frenchData.funFacts.relatedLanguages
+
+function buildlanguagelist (){
+  let languagehtmlstring = " "
+  for (let i= 0; i < factsLanguage.length; i++){
+languagehtmlstring = languagehtmlstring + `<li>` + factsLanguage[i]
+  }
+  return languagehtmlstring
+}
+
+// will build countries spoken function
+const countryspoken = frenchData.countriesSpoken
+
+function buildcountryspokenlist (){
+  let countryspokenhtmlstring = " "
+  for (let i= 0; i < countryspoken.length; i++){
+    countryspokenhtmlstring = countryspokenhtmlstring + `<li>` + countryspoken[i]
+  }
+  return countryspokenhtmlstring
+}
+
+// will display alphabet number
+
+const alphabet= frenchData.funFacts.lettersInAlphabet
+
+// will display number of speakers
+const speakers= frenchData.funFacts.numberOfSpeakers
+
+// will call the button to display french facts
+const frenchbutton= document.querySelector("#french")
+
+// event listener creating the html to the DOM
+
+frenchbutton.addEventListener("click",function(){
+document.querySelector("#language-container").innerHTML= `<h1>${frenchtitle}</h1>
+<br>
+<div class="container">
+
+<div class="col-sm">
+<h2>NOTABLE PEOPLE</h2>
+${buildpeoplelist()}
+</div>
+
+<br>
+<br>
+<div class="col-sm">
+<h2>FUN FACTS</h2>
+<br>
+<h3>Related Languages</h3>
+${buildlanguagelist()}
+<br>
+<h3>Letters in the Alphabet</h3>
+<li>${alphabet}</li>
+<h3>Number of Speakers</h3>
+<li>${speakers}</li>
+<br>
+</div>
+
+<div class="col-sm">
+<h2>COUNTRIES SPOKEN</h2>
+${buildcountryspokenlist()}
+</div>
+</div>
+`
+})
 
 
