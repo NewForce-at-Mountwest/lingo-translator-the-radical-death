@@ -43,29 +43,68 @@ const mandarinData = {
 const navigation = document.querySelector("#mandarin").addEventListener("click", function () {
   const mandarinInfo = document.querySelector("#language-container")
   //inserts the lists into the correct HTML.
-  mandarinInfo.innerHTML =  `${addNotablePeople()} <h3>Fun Facts</h3> ${addFunFactsFactsLanguage()} ${addCountries()}`
+  mandarinInfo.innerHTML =  `<h1>${mandarinName}</h1>
+  <br>
+  <div class="container">
+  
+  <div class="col-sm">
+  <h2>NOTABLE PEOPLE</h2>
+  ${addNotablePeople()}
+  </div>
+  
+  <br>
+  <br>
+  <div class="col-sm">
+  <h2>FUN FACTS</h2>
+  <br>
+  <h3>Related Languages</h3>
+  ${addFunFactsFactsLanguage()}
+  <br>
+  <h3>Letters in the Alphabet</h3>
+  <li>${letters}</li>
+  <h3>Number of Speakers</h3>
+  <li>${speakers}</li>
+  <br>
+  <h3>Area Dialects</h3>
+  <li>${dialectInformation}</li>
+  <li>${addDialects()}</li>
+  </div>
+  
+  <div class="col-sm">
+  <h2>COUNTRIES SPOKEN</h2>
+  ${buildcountryspokenlist()}
+  </div>
+  </div>
+  `
+  })
   
   
 
-})
+
+
 
 //build list of languages
 
+
 function addFunFactsFactsLanguage(FunfactsLanguagesArray){
   
-  let languageIterations = "<h4>Related Languages</h4>"
+  let languageIterations = ""
  for (i = 0; i < mandarinData.funFacts.relatedLanguages.length; i++) {
   languageIterations += `<p>${mandarinData.funFacts.relatedLanguages[i]}</p>`
  }
    return languageIterations
 
 }
+//build remaining funfacts
+
+
+
 
 
 
 //build list of speakers
 function addNotablePeople(notablePeopleArray){
-  let peopleIterations = "<h3>Notable speakers: </h3>"
+  let peopleIterations = ""
  for (i = 0; i < mandarinData.notablePeople.length; i++) {
   peopleIterations += `<p>${mandarinData.notablePeople[i]}</p>`
  }
@@ -86,12 +125,32 @@ function addCountries(countriesArray){
 
 }
  
+function addDialects(dialectsArray){
+  let dialectsIterations = "<h4>Chinese Dialects: </h4>"
+ for (i = 0; i < mandarinData.funFacts.mandrinInfo.chineseDialects.length; i++) {
+  dialectsIterations += `<p>${mandarinData.funFacts.mandrinInfo.chineseDialects[i]}</p>`
+ }
+   return dialectsIterations
+
+}
+ 
+
+ 
+ const letters=mandarinData.funFacts.lettersInAlphabet
+ const dialectInformation=mandarinData.funFacts.mandrinInfo.dialectInfo
+ const mandarinName = mandarinData.name
+ 
+   
+
+
 
 
 
  
 //Parking Lot 
 // let factsRelatedLanguage = mandarinData.funFacts.relatedLanguages
+
+
 
 
   
