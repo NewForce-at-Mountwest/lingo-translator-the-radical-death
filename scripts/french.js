@@ -92,6 +92,18 @@ const speakers= frenchData.funFacts.numberOfSpeakers
 // will call the button to display french facts
 const frenchbutton= document.querySelector("#french")
 
+// will call the translate button
+const translatebtn= document.querySelector("#language-container")
+
+// event listener for the translator 
+
+translatebtn.addEventListener("click",function(){
+  document.querySelector("#mytext")
+ if  (event.target.id === "translatebutton"){
+   document.innerHTML= "hello dude"
+  }
+})
+
 // event listener creating the html to the DOM
 
 frenchbutton.addEventListener("click",function(){
@@ -124,8 +136,27 @@ ${buildlanguagelist()}
 <h2>COUNTRIES SPOKEN</h2>
 ${buildcountryspokenlist()}
 </div>
+<br>
+
+
+
+<div id="translator">
+<h1>FRENCH TRANSLATOR</h1>
+<br>
+<form>
+TRANSLATE FRENCH: <input type="text" id="mytext"
+
+name="translate">
+
+<button id="translatebutton">TRANSLATE</button>
+
+<div id= "translatedword">
 </div>
+</form>
+<br>
+</div>
+</div>
+
 `
 })
-
 
