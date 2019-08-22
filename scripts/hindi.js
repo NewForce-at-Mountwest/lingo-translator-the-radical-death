@@ -176,7 +176,7 @@ const createTranslatorComponent = () => {
 
 
     if(event.target.id === "translate-entry"){
-      
+      console.log("You clicked the translate button from the hindi event listener")
       document.querySelector("#answer").innerHTML = answerToTranslation()
 
     }
