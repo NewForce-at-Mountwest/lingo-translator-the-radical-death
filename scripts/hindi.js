@@ -140,6 +140,47 @@ return `<div><h4 id="hindi-countries-heading">Countries Spoken</h4></div>` + bui
 }
 
 
+// Create a function that will print the html inside the function to the DOM when you call the function in the main event listener at the very bottom.
+
+
+const createTranslatorComponent = () => {
+
+  return `
+  <fieldset>
+    <label id="translator-label" for="translator">Translator App</label>
+    <input type="text" id="translator" class="translate-form-input" placeholder="Input Text Here" />
+    <button id="translate-entry">Translate!</button>
+  </fieldset>
+    <p id="answer"></p>
+  `
+
+  }
+
+
+  // Create a function that translates the word typed into the "input" element into the hindi word.
+
+  const answerToTranslation = () => {
+
+    const inputValue = document.querySelector("#translator").value
+
+    if ( inputValue === "Hello"){
+      return hindiData.dictionary.hello.hindi
+    }
+
+  }
+
+
+// Create an event listener that makes it to when you click on the "Translate!" button, it adds the answer to the <p> element you referenced from the html string written above.
+
+  document.querySelector("#language-container").addEventListener("click", function (){
+
+
+    if(event.target.id === "translate-entry"){
+      
+      document.querySelector("#answer").innerHTML = answerToTranslation()
+
+    }
+  })
 
 
 
@@ -161,7 +202,7 @@ return `<div><h4 id="hindi-countries-heading">Countries Spoken</h4></div>` + bui
 
     container.innerHTML += countriesSpokenComponent();
 
-
+    container.innerHTML += createTranslatorComponent();
 
   }
   )
