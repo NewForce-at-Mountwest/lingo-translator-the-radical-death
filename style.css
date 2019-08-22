@@ -1,0 +1,12 @@
+.header{
+    display:flex;
+    justify-content: center;
+    text-decoration-line: underline
+}
+.textbox{
+    display:flex;
+    justify-content: center;
+
+}
+
+
