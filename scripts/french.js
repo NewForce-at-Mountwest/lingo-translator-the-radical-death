@@ -140,7 +140,7 @@ ${buildcountryspokenlist()}
 
 
 
-<div id="translator">
+<div class="textbox">
 <h1>FRENCH TRANSLATOR</h1>
 <br>
 <form>
