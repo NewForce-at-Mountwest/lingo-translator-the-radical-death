@@ -9,4 +9,10 @@
 
 }
 
+.container {
+    display:flex;
+}
 
+.col-sm {
+    flex:1;
+}
