@@ -92,10 +92,51 @@ const speakers= frenchData.funFacts.numberOfSpeakers
 // will call the button to display french facts
 const frenchbutton= document.querySelector("#french")
 
+// will call the translate button
+const translatebtn= document.querySelector("#language-container")
+
+// logic for translator input
+const answerToTrany = () => {
+
+  const inputValue = document.querySelector("#mytext").value
+
+  if ( inputValue === "hello"){
+    return frenchData.dictionary.hello
+  }
+else if ( inputValue === "goodbye"){
+  return frenchData.dictionary.goodbye
+}
+else if ( inputValue === "thank you"){
+  return frenchData.dictionary.thankYou
+}
+else if ( inputValue === "good evening"){
+  return frenchData.dictionary.goodEvening
+}
+else if ( inputValue === "how are you"){
+  return frenchData.dictionary.howAreYou
+}
+else if ( inputValue === "whats your name"){
+  return frenchData.dictionary.whatsYourName
+}
+else {
+  return `<br> YOU IZ STUPID!!!`
+}
+}
+// event listener for the translator 
+
+translatebtn.addEventListener("click",function(){
+  document.querySelector("#mytext")
+ if  (event.target.id === "translatebutton"){
+   document.querySelector("#translatedword").innerHTML= answerToTrany()
+  }
+})
+
 // event listener creating the html to the DOM
 
 frenchbutton.addEventListener("click",function(){
-document.querySelector("#language-container").innerHTML= `<h1>${frenchtitle}</h1>
+document.querySelector("#language-container").innerHTML= 
+`<div class= "header">
+<h1>${frenchtitle}</h1>
 <br>
 <div class="container">
 
@@ -123,8 +164,24 @@ ${buildlanguagelist()}
 <h2>COUNTRIES SPOKEN</h2>
 ${buildcountryspokenlist()}
 </div>
+<br>
+</div>
+
+
+<div class="textbox">
+<h3>FRENCH TRANSLATOR</h3>
+<br>
+<form>
+TRANSLATE FRENCH: <input id="mytext">
+
+<button id="translatebutton">TRANSLATE</button>
+
+<div id= "translatedword">
+</div>
+</form>
+<br>
+</div>
 </div>
 `
 })
-
 
