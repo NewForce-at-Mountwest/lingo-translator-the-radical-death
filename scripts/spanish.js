@@ -145,9 +145,12 @@ languageContainer.addEventListener("click",function(){
 
 spanishbutton.addEventListener("click",function(){
 document.querySelector("#language-container").innerHTML=
-`<h1>${spanishtitle}</h1>
+
+`<div class = "header"> 
+<h1>${spanishtitle}</h1>
+</div>
 <br>
-<div class="container"> 
+<div class="textbox">
 
 <div class="col-sm">
 <h2>NOTABLE PEOPLE</h2>
