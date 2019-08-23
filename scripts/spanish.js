@@ -90,8 +90,56 @@ const SPalphabet= spanishData.funFacts.lettersInAlphabet
 // will display number of speakers
 const SPspeakers= spanishData.funFacts.numberOfSpeakers
 
-// will call the button to display french facts
+// will call the button to display Spanish facts
 const spanishbutton= document.querySelector("#spanish")
+
+const languageContainer= document.querySelector("#language-container") 
+
+
+// logic for the translator button //
+const answerToSpanishTranslation = () => {
+
+  const inputValue = document.querySelector("#transinput").value 
+
+if ( inputValue === "hello"){
+  return spanishData.dictionary.hello
+}
+
+else if (inputValue === "goodbye"){
+  return spanishData.dictionary.goodbye 
+}
+
+else if (inputValue === "thank you"){
+  return spanishData.dictionary.thankYou 
+}
+
+else if ( inputValue === "good evening"){
+return spanishData.dictionary.goodEvening
+}
+
+else if (inputValue === "how are you"){
+  return spanishData.dictionary.howAreYou
+}
+
+else if ( inputValue === "whats your name"){
+  return spanishData.dictionary.whatsYourName
+}
+
+
+
+}
+
+// event listener for the translator 
+languageContainer.addEventListener("click",function(){
+  console.log("you clicked anywhere in the container")
+  document.querySelector("#transinput")
+  
+  if (event.target.id === "translatebutton"){
+    
+    document.querySelector("#Translate-Language").innerHTML=answerToSpanishTranslation()
+  }
+})
+
 
 // event listener creating the html to the DOM
 
@@ -129,9 +177,12 @@ ${buildcountryspokenlist()}
 <h1> Spanish Translator </h1>
 
 <form>
-input id = "translation-input" type=text>
+<input id = "transinput">
 
-<button id= " translatebutton"> 
+<button id= "translatebutton">Translate</button> 
+
+<div id= "Translate-Language"> 
+</div>
 
 </form>
 <br>
@@ -140,18 +191,4 @@ input id = "translation-input" type=text>
 
 `
 })  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
