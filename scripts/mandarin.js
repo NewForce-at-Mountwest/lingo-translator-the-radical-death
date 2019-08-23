@@ -109,32 +109,22 @@ const answerToTranslationMand = () => {
 
   const inputValue = document.querySelector("#mandarin-translator").value
 
-  if ( inputValue === "Hello" ){
+  if ( inputValue === "Hello" || inputValue === "hello" ){
     return mandarinData.dictionary.hello
-  } else if (inputValue === "Goodbye"){
+  } else if (inputValue === "Goodbye" || inputValue === "goodbye"){
     return mandarinData.dictionary.goodbye
-  } else if (inputValue === "Thank you"){
+  } else if (inputValue === "Thank you"|| inputValue === "thank you"){
     return mandarinData.dictionary.thankYou
-  } else if (inputValue === "Good evening"){
+  } else if (inputValue === "Good evening" || inputValue === "good morning"){
     return mandarinData.dictionary.goodEvening
-  }else if (inputValue === "How are you"){
+  }else if (inputValue === "How are you" || inputValue === "how are you"){
     return mandarinData.dictionary.howAreYou
-  }else if (inputValue === "Whats your name"){
+  }else if (inputValue === "Whats your name"|| inputValue === "whats your name" || inputValue === "what's your name" || inputValue === "What's your name"){
     return mandarinData.dictionary.whatsYourName
-} else {return 'Sorry not in dictionary'
+} else {
+   return `Sorry, not in dictionary.` 
 }
 }
-
-// hello: "你好",
-// goodbye: "再见",
-// thankYou: "谢谢",
-// goodEvening: "晚上好",
-// howAreYou: "你好吗",
-// whatsYourName:
-
-
-
-
 
 //build list of languages
 function addFunFactsFactsLanguage(FunfactsLanguagesArray) {
