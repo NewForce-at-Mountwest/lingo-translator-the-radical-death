@@ -49,37 +49,38 @@ const navigation = document.querySelector("#mandarin").addEventListener("click",
   <div class="container">
     <div class="row">
       <div class="col-sm">
-  <h2>NOTABLE PEOPLE</h2>
-  ${addNotablePeople()}
-  </div>
+      <h2>NOTABLE PEOPLE</h2>
+      ${addNotablePeople()}
+      </div>
   
-  <br>
-  <br>
-      <div class="col-sm">
-  <h2>FUN FACTS</h2>
-  <br>
-  <h4>Related Languages</h4>
-  ${addFunFactsFactsLanguage()}
-  <br>
-  <h4>Letters in the Alphabet</h4>
-  <li>${letters}</li>
-  <br><br>
-  <h4>Number of Speakers</h4>
-  <li>${speakers}</li>
-  <br><br>
-  <h4>Area Dialects</h4>
-  <li>${dialectInformation}</li>
-  <br><br>
-  ${addDialects()}
-  </div>
-  
-      <div class="col-sm">
-  <h2>COUNTRIES SPOKEN</h2>
-  ${addCountries()}
-  </div>
-  </div>
+      <br>
+      <br>
 
-  <br><br>
+      <div class="col-sm">
+      <h2>FUN FACTS</h2>
+      <br>
+      <h4>Related Languages</h4>
+      ${addFunFactsFactsLanguage()}
+      <br>
+      <h4>Letters in the Alphabet</h4>
+      <li>${letters}</li>
+      <br><br>
+      <h4>Number of Speakers</h4>
+      <li>${speakers}</li>
+      <br><br>
+      <h4>Area Dialects</h4>
+      <li>${dialectInformation}</li>
+      <br><br>
+      ${addDialects()}
+      </div>
+  
+      <div class="col-sm">
+      <h2>COUNTRIES SPOKEN</h2>
+      ${addCountries()}
+      </div>
+    </div>
+
+    <br><br>
 
   
   <div class="row">

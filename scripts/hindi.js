@@ -63,9 +63,11 @@
 
 const createNameComponent = () => {
   return `
-  <div id="name-div">
-  <h4 id="hindi-name-heading">${hindiData.name}</h4>
-  </div>
+
+  
+  <section class="header">
+  <h1 id="hindi-name-heading" class="header">${hindiData.name}</h1>
+  </section>
   `
 }
 
@@ -85,9 +87,9 @@ const notablePeopleComponent = () => {
 
      buildMeUp = buildMeUp + " " +  `
      
-     <ul id="hindi-notable-list">
+     
        <li>${hindiData.notablePeople[i]}</li>
-     </ul>
+     
    
      `
      
@@ -95,7 +97,7 @@ const notablePeopleComponent = () => {
 
 // below is where you will actually return the information built in the loop, but before that, you will place the html string created to make the heading for this section, called "Notable People"
 
-return `<div><h4 id="hindi-notable-heading">Notable People</h4></div>` + buildMeUp
+return `<div class="notable-people-hindi"><h2>Notable People</h2><ul>` + buildMeUp + `</ul></div>`
   
 }
 
@@ -104,14 +106,14 @@ return `<div><h4 id="hindi-notable-heading">Notable People</h4></div>` + buildMe
 
 const createFunFactComponent = () => {
   return `
-  <div>
-  <h4 id="hindi-fun-heading">Fun Facts</h5>
-  <h6 id="hindi-fun-sub-heading">Related Languages</h6>
-  <p>${hindiData.funFacts.relatedLanguages}</p>
-  <h6 id="hindi-fun-sub-heading">Letter In Alphabet</h6>
-  <p>${hindiData.funFacts.lettersInAlphabet}</p>
-  <h6 id="hindi-fun-sub-heading">Number of Speakers</h6>
-  <p>${hindiData.funFacts.numberOfSpeakers}</p>
+  <div class="fun-fact-hindi">
+  <h2 id="hindi-fun-heading">Fun Facts</h2>
+  <h4 id="hindi-fun-sub-heading">Related Languages</h4>
+  <li>${hindiData.funFacts.relatedLanguages}</li>
+  <h4 id="hindi-fun-sub-heading">Letter In Alphabet</h4>
+  <li>${hindiData.funFacts.lettersInAlphabet}</li>
+  <h4 id="hindi-fun-sub-heading">Number of Speakers</h4>
+  <li>${hindiData.funFacts.numberOfSpeakers}</li>
   </div>
   `
   
@@ -127,15 +129,15 @@ const countriesSpokenComponent = () => {
 
      buildMeUp = buildMeUp + " " +  `
      
-     <ul id="hindi-countries-list">
+    
        <li>${hindiData.countriesSpoken[i]}</li>
-     </ul>
+    
    
      `
      
 }
 
-return `<div><h4 id="hindi-countries-heading">Countries Spoken</h4></div>` + buildMeUp
+return `<div class="countries-hindi"><h2 id="hindi-countries-heading">Countries Spoken</h2><ul>` + buildMeUp + `</ul></div>`
   
 }
 
@@ -146,12 +148,15 @@ return `<div><h4 id="hindi-countries-heading">Countries Spoken</h4></div>` + bui
 const createTranslatorComponent = () => {
 
   return `
+ 
+  <section class="sec-form-hindi">
   <fieldset>
-    <label id="translator-label" for="translator">Translator App</label>
+    <h3 id="translator-label" for="translator">Translator App</h3>
     <input type="text" id="translator" class="translate-form-input" placeholder="Input Text Here" />
-    <button id="translate-entry">Translate!</button>
+    <button id="hindi-translate-entry">Translate!</button>
   </fieldset>
-    <p id="answer"></p>
+  <p id="answer"></p>
+  </section>
   `
 
   }
@@ -163,10 +168,27 @@ const createTranslatorComponent = () => {
 
     const inputValue = document.querySelector("#translator").value
 
-    if ( inputValue === "Hello"){
+    if ( inputValue === "hello"){
       return hindiData.dictionary.hello.hindi
     }
-
+    else if (inputValue === "goodbye"){
+      return hindiData.dictionary.goodbye.hindi
+    }
+    else if (inputValue === "thank you"){
+      return hindiData.dictionary.thankYou.hindi
+    }
+    else if (inputValue === "good evening"){
+      return hindiData.dictionary.goodEvening.hindi
+    }
+    else if (inputValue === "how are you"){
+      return hindiData.dictionary.howAreYou.hindi
+    }
+    else if (inputValue === "what's your name"){
+      return hindiData.dictionary.whatsYourName.hindi
+    }
+    else {
+      return `This word does not exist in the translator app!`
+    }
   }
 
 
@@ -175,7 +197,7 @@ const createTranslatorComponent = () => {
   document.querySelector("#language-container").addEventListener("click", function (){
 
 
-    if(event.target.id === "translate-entry"){
+    if(event.target.id === "hindi-translate-entry"){
       
       document.querySelector("#answer").innerHTML = answerToTranslation()
 
