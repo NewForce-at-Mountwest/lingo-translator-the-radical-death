@@ -97,7 +97,10 @@ const notablePeopleComponent = () => {
 
 // below is where you will actually return the information built in the loop, but before that, you will place the html string created to make the heading for this section, called "Notable People"
 
-return `<div class="notable-people-hindi"><h2>Notable People</h2><ul>` + buildMeUp + `</ul></div>`
+return `
+<div class="container">
+  <div class="row">
+    <div class="col-sm"><h2>Notable People</h2><ul>` + buildMeUp + `</ul></div>`
   
 }
 
@@ -106,7 +109,7 @@ return `<div class="notable-people-hindi"><h2>Notable People</h2><ul>` + buildMe
 
 const createFunFactComponent = () => {
   return `
-  <div class="fun-fact-hindi">
+  <div class="col-sm">
   <h2 id="hindi-fun-heading">Fun Facts</h2>
   <h4 id="hindi-fun-sub-heading">Related Languages</h4>
   <li>${hindiData.funFacts.relatedLanguages}</li>
@@ -137,7 +140,9 @@ const countriesSpokenComponent = () => {
      
 }
 
-return `<div class="countries-hindi"><h2 id="hindi-countries-heading">Countries Spoken</h2><ul>` + buildMeUp + `</ul></div>`
+return `<div class="col-sm"><h2 id="hindi-countries-heading">Countries Spoken</h2><ul>` + buildMeUp + `</ul></div>
+</div></div>
+`
   
 }
 
