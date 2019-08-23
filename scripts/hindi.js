@@ -170,7 +170,17 @@ const createTranslatorComponent = () => {
   }
 
 
- 
+// Create an event listener that makes it to when you click on the "Translate!" button, it adds the answer to the <p> element you referenced from the html string written above.
+
+  document.querySelector("#language-container").addEventListener("click", function (){
+
+
+    if(event.target.id === "translate-entry"){
+      console.log("You clicked the translate button from the hindi event listener")
+      document.querySelector("#answer").innerHTML = answerToTranslation()
+
+    }
+  })
 
 
 

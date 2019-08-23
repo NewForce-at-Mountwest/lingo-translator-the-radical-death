@@ -81,28 +81,50 @@ const navigation = document.querySelector("#mandarin").addEventListener("click",
 
   <br><br>
 
-  
+  <fieldset>
   <div class="row">
-  <div class="col">
-  <section class=textbox>
-  <input>Enter Text</input> <button class=translate_button>Translate</button>
+  <div class="col textbox">  
+  <label id="translator-label" for="translator">Translator App</label>
+  <input type="text" id="mandarin-translator" class="textbox" placeholder="Input Text Here" />
+  <button id="mandarin-translate-entry">Translate!</button>
+  </fieldset>
+  <p id="mand-answer" class=textbox></p>
   </section>
   </div>
   `
 })
 
 //build translator function
-const xlate= function buildTranslatorButton(){
-  const xlateBtn = document.querySelector("body").addEventListener("click", function () {
-    //compare input text to language object
-    //get user input, make variable
-    //if statements for all words as strings
-    //print translated 
-  
-  console.log("xlate button clicked")
-})
-}
 
+  document.querySelector("body").addEventListener("click", function() {   
+  if(event.target.id === "mandarin-translate-entry"){  
+    console.log("You clicked the translate button from the mandarin event listener")  
+    document.querySelector("#mand-answer").innerHTML = answerToTranslationMand()
+  }
+})
+
+// Create a function that translates the word typed into the "input" element into the hindi word.
+
+const answerToTranslationMand = () => {
+
+  const inputValue = document.querySelector("#mandarin-translator").value
+
+  if ( inputValue === "Hello" || inputValue === "hello" ){
+    return mandarinData.dictionary.hello
+  } else if (inputValue === "Goodbye" || inputValue === "goodbye"){
+    return mandarinData.dictionary.goodbye
+  } else if (inputValue === "Thank you"|| inputValue === "thank you"){
+    return mandarinData.dictionary.thankYou
+  } else if (inputValue === "Good evening" || inputValue === "good morning"){
+    return mandarinData.dictionary.goodEvening
+  }else if (inputValue === "How are you" || inputValue === "how are you"){
+    return mandarinData.dictionary.howAreYou
+  }else if (inputValue === "Whats your name"|| inputValue === "whats your name" || inputValue === "what's your name" || inputValue === "What's your name"){
+    return mandarinData.dictionary.whatsYourName
+} else {
+   return `Sorry, not in dictionary.` 
+}
+}
 
 //build list of languages
 function addFunFactsFactsLanguage(FunfactsLanguagesArray) {
